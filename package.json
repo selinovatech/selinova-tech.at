@@ -5,10 +5,16 @@
   "main": "index.js",
   "scripts": {
     "start": "npx serve .",
-    "build:css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build:analytics": "esbuild src/analytics.js --bundle --outfile=dist/analytics.bundle.js --format=iife",
+    "build": "npm run build:analytics && npx tailwindcss -i ./src/input.css -o ./dist/output.css"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.1",
-    "serve": "^14.2.1"
+    "esbuild": "^0.28.0",
+    "serve": "^14.2.1",
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
   }
 }
