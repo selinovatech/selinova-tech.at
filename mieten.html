@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webseiten Mieten • SELINOVATECH</title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+    <!-- Navbar -->
+    <nav class="border-b border-zinc-800 bg-zinc-950/90 backdrop-blur-lg sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-11 h-11 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center">
+                        <span class="text-white text-3xl font-black tracking-tighter">S</span>
+                    </div>
+                    <div>
+                        <div class="font-display text-3xl font-semibold tracking-tighter">SELINOVATECH</div>
+                        <div class="text-[10px] text-zinc-500 -mt-1">ARCHITEKTUR FÜR DIGITALE RÄUME</div>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center gap-x-10 text-sm">
+                    <a href="selinovatech_homepage.html" class="hover:text-white transition-colors">Entdecken</a>
+                    <a href="kaufen.html" class="hover:text-white transition-colors">Kaufen</a>
+                    <a href="mieten.html" class="nav-active">Mieten</a>
+                    <a href="#" class="hover:text-white transition-colors">Atelier</a>
+                </div>
+
+                <div class="flex items-center gap-x-4">
+                    <button onclick="window.location.href='selinovatech_homepage.html'" 
+                            class="px-6 py-2.5 text-sm font-medium border border-zinc-700 hover:bg-zinc-900 rounded-2xl transition-colors">
+                        Zurück zur Startseite
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="max-w-screen-2xl mx-auto px-8 pt-20 pb-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-x-2 bg-zinc-900 border border-zinc-800 rounded-3xl px-5 py-1.5 mb-8">
+                <span class="studio-badge text-xs tracking-[2px]">FLEXIBLE MIET-LIZENZ</span>
+            </div>
+            
+            <h1 class="section-title tracking-tighter mb-6">
+                Webseiten mieten.<br>
+                <span class="bg-gradient-to-r from-orange-400 via-amber-400 to-orange-400 bg-clip-text text-transparent">Sofort nutzen.</span>
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-2xl text-zinc-400 leading-tight">
+                Nutzen Sie ein einzigartiges digitales Kunstwerk –<br>
+                so lange Sie es benötigen.
+            </p>
+            
+            <div class="mt-10 flex justify-center gap-x-4">
+                <button onclick="document.getElementById('mietmodelle').scrollIntoView({ behavior: 'smooth' })" 
+                        class="px-10 py-4 bg-white text-zinc-900 font-semibold rounded-3xl flex items-center gap-x-3 text-lg hover:bg-zinc-100 transition-all">
+                    <span>Jetzt mieten</span>
+                </button>
+                
+                <button onclick="showConsultationModal()" 
+                        class="px-8 py-4 border border-zinc-700 hover:bg-zinc-900 rounded-3xl flex items-center gap-x-3 text-lg transition-colors">
+                    <i class="fa-solid fa-calendar"></i>
+                    <span>Beratung buchen</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Philosophy -->
+    <div class="max-w-screen-2xl mx-auto px-8 py-20 border-y border-zinc-800 bg-zinc-900/30">
+        <div class="max-w-3xl mx-auto text-center">
+            <div class="text-orange-500 text-sm tracking-[3px] mb-4">MIET-LIZENZ</div>
+            <h2 class="text-5xl font-semibold tracking-tighter mb-8 leading-none">
+                Ausleihen statt kaufen.<br>
+                Vollständige Nutzungsrechte.
+            </h2>
+            
+            <div class="atelier-text max-w-2xl mx-auto">
+                Mit unserer Miet-Lizenz erwerben Sie das volle Nutzungsrecht an einem unserer exklusiven digitalen Kunstwerke. 
+                Die Webseite bleibt Ihr digitales Eigentum – solange Sie die monatliche oder jährliche Miete entrichten. 
+                Bei Kündigung wird die Seite offline geschaltet und Sie erhalten eine finale Export-Version.
+            </div>
+        </div>
+    </div>
+
+    <!-- Miet-Modelle -->
+    <div id="mietmodelle" class="max-w-screen-2xl mx-auto px-8 py-20">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="text-xs tracking-[2px] text-orange-500 mb-3">MIET-MODELLE</div>
+                <h2 class="text-5xl font-semibold tracking-tighter">Flexible Ausleihe für Ihr digitales Kunstwerk</h2>
+                <p class="mt-4 text-xl text-zinc-400 max-w-lg mx-auto">Wählen Sie die Laufzeit, die zu Ihrem Projekt passt.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Monatsmiete -->
+                <div class="license-card bg-zinc-900 border border-zinc-700 rounded-3xl p-10 relative flex flex-col">
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <div class="text-sm text-zinc-400">FLEXIBEL</div>
+                                <div class="text-4xl font-semibold tracking-tight mt-2">Monatsmiete</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-5xl font-semibold tracking-tighter">149 €</div>
+                                <div class="text-xs text-zinc-400">pro Monat</div>
+                            </div>
+                        </div>
+                        
+                        <div class="my-8 h-px bg-zinc-800"></div>
+                        
+                        <div class="space-y-4 text-sm">
+                            <div class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span>Vollständige Nutzung des Kunstwerks</span></div>
+                            <div class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span>Monatliche Kündigung möglich</span></div>
+                            <div class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span>24/7 Hosting &amp; SSL inklusive</span></div>
+                            <div class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span>Regelmäßige Sicherheitsupdates</span></div>
+                            <div class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span>Bei Kündigung: finale Export-Version</span></div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="rentNow('monthly')" 
+                            class="mt-8 w-full py-4 border border-white text-white font-semibold rounded-3xl hover:bg-white hover:text-zinc-900 transition-all">
+                        Monatlich mieten – 149 €
+                    </button>
+                </div>
+                
+                <!-- Jahresmiete -->
+                <div class="license-card bg-zinc-900 border border-orange-500 rounded-3xl p-10 relative flex flex-col ring-1 ring-orange-500/50">
+                    <div class="absolute -top-4 right-8 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-xs px-6 py-1.5 rounded-full font-semibold tracking-wider">EMPFOHLEN</div>
+                    
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <div class="text-sm text-orange-400">SPAREN SIE 20%</div>
+                                <div class="text-4xl font-semibold tracking-tight mt-2">Jahresmiete</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-5xl font-semibold tracking-tighter">1.290 €</div>
+                                <div class="text-xs text-zinc-400">pro Jahr</div>
+                            </div>
+                        </div>
+                        
+                        <div class="my-8 h-px bg-zinc-800"></div>
+                        
+                        <div class="space-y-4 text-sm">
+                            <div class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span>Alle Vorteile der Monatsmiete</span></div>
+                            <div class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span>2 Monate gratis (effektiv 107,50 €/Monat)</span></div>
+                            <div class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span>Priorisierter Support</span></div>
+                            <div class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span>Kostenlose kleine Anpassungen</span></div>
+                            <div class="flex gap-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i> <span>Bei Kündigung: finale Export-Version + 30 Tage Nachbetreuung</span></div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="rentNow('yearly')" 
+                            class="mt-8 w-full py-4 bg-white text-zinc-900 font-semibold rounded-3xl hover:bg-zinc-100 transition-all">
+                        Jahresmiete – 1.290 € (sparen Sie 498 €)
+                    </button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10 text-xs text-zinc-500 max-w-md mx-auto">
+                Die Miet-Lizenz gewährt Ihnen das volle Nutzungsrecht während der Vertragslaufzeit. 
+                Bei Kündigung wird die Webseite offline genommen und Sie erhalten eine finale Export-Version.
+            </div>
+        </div>
+    </div>
+
+    <!-- Lizenz-Erklärung -->
+    <div class="max-w-screen-2xl mx-auto px-8 py-20 bg-zinc-900/50 border-y border-zinc-800">
+        <div class="max-w-3xl mx-auto">
+            <h3 class="text-4xl font-semibold tracking-tight text-center mb-12">Was bedeutet „Mieten“ bei SELINOVATECH?</h3>
+            
+            <div class="space-y-8 text-lg">
+                <div class="flex gap-x-6">
+                    <div class="w-9 h-9 flex-shrink-0 bg-orange-500/20 text-orange-400 rounded-2xl flex items-center justify-center font-semibold">01</div>
+                    <div>
+                        <div class="font-semibold mb-2">Volle Nutzungsrechte</div>
+                        <div class="text-zinc-400">Sie dürfen die Webseite uneingeschränkt kommerziell und privat nutzen – genau wie bei einem Kauf.</div>
+                    </div>
+                </div>
+                <div class="flex gap-x-6">
+                    <div class="w-9 h-9 flex-shrink-0 bg-orange-500/20 text-orange-400 rounded-2xl flex items-center justify-center font-semibold">02</div>
+                    <div>
+                        <div class="font-semibold mb-2">Flexibler Ausstieg</div>
+                        <div class="text-zinc-400">Monatlich oder jährlich kündbar. Bei Kündigung erhalten Sie eine finale, offline-fähige Version der Webseite.</div>
+                    </div>
+                </div>
+                <div class="flex gap-x-6">
+                    <div class="w-9 h-9 flex-shrink-0 bg-orange-500/20 text-orange-400 rounded-2xl flex items-center justify-center font-semibold">03</div>
+                    <div>
+                        <div class="font-semibold mb-2">Kein Lock-in</div>
+                        <div class="text-zinc-400">Sie bleiben nicht für immer gebunden. Die Miete ist eine bewusste, flexible Entscheidung für Ihr Projekt.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="max-w-screen-2xl mx-auto px-8 py-24 text-center">
+        <div class="max-w-xl mx-auto">
+            <h2 class="text-5xl font-semibold tracking-tighter mb-6">Bereit für Ihr digitales Kunstwerk?</h2>
+            <p class="text-xl text-zinc-400 mb-10">Mieten Sie ein einzigartiges Design – und starten Sie sofort.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="rentNow('yearly')" 
+                        class="px-12 py-4 bg-white text-zinc-900 font-semibold rounded-3xl text-lg hover:bg-zinc-100 transition-all">
+                    Jetzt für 1.290 € / Jahr mieten
+                </button>
+                <button onclick="showConsultationModal()" 
+                        class="px-10 py-4 border border-zinc-700 hover:bg-zinc-900 rounded-3xl text-lg transition-colors flex items-center justify-center gap-x-3">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span>Persönliches Atelier-Gespräch</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="border-t border-zinc-800 bg-zinc-950 py-16">
+        <div class="max-w-screen-2xl mx-auto px-8 text-center text-xs text-zinc-500">
+            © 2026 SELINOVATECH – Atelier für digitale Architektur. Mietpreise zzgl. 20% USt. • Kündbar monatlich oder jährlich • Keine versteckten Gebühren.
+        </div>
+    </footer>
+
+    <script>
+        function rentNow(plan) {
+            const price = plan === 'monthly' ? '149 € / Monat' : '1.290 € / Jahr'
+            const modal = document.createElement('div')
+            modal.className = 'fixed inset-0 bg-black/90 z-[200] flex items-center justify-center p-4'
+            modal.innerHTML = `
+                <div class="bg-zinc-900 rounded-3xl max-w-md w-full p-10 border border-zinc-700 modal">
+                    <div class="text-center">
+                        <div class="mx-auto w-16 h-16 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-key text-white text-4xl"></i>
+                        </div>
+                        
+                        <h3 class="text-3xl font-semibold tracking-tight mb-3">Mietvertrag starten</h3>
+                        <p class="text-zinc-400 mb-8">Sie mieten das ausgewählte Kunstwerk für <span class="font-semibold text-white">${price}</span></p>
+                        
+                        <div class="space-y-4">
+                            <button onclick="completeRental(this, '${plan}')" 
+                                    class="w-full py-4 bg-white text-zinc-900 font-semibold rounded-3xl hover:bg-zinc-100 transition-all">
+                                Jetzt mieten – ${price}
+                            </button>
+                            
+                            <button onclick="this.closest('.fixed').remove()" 
+                                    class="w-full py-4 text-sm text-zinc-400 hover:text-white transition-colors">
+                                Abbrechen
+                            </button>
+                        </div>
+                        
+                        <div class="mt-8 text-[10px] text-zinc-500">Sichere Zahlung • Jederzeit kündbar • Sofortiger Projektstart</div>
+                    </div>
+                </div>
+            `
+            document.body.appendChild(modal)
+        }
+        
+        function completeRental(btn, plan) {
+            btn.innerHTML = `<i class="fa-solid fa-check mr-2"></i> Vertrag wird vorbereitet...`
+            btn.disabled = true
+            
+            setTimeout(() => {
+                btn.closest('.fixed').remove()
+                const success = document.createElement('div')
+                success.className = 'fixed inset-0 bg-black/90 z-[300] flex items-center justify-center'
+                success.innerHTML = `
+                    <div class="text-center max-w-md">
+                        <div class="text-7xl mb-6">🔑</div>
+                        <h2 class="text-4xl font-semibold tracking-tight mb-4">Willkommen im Atelier!</h2>
+                        <p class="text-xl text-zinc-300 mb-8">Ihr Mietvertrag wurde erfolgreich abgeschlossen.<br>Die Webseite wird innerhalb von 48 Stunden für Sie aktiviert.</p>
+                        
+                        <button onclick="window.location.reload()" 
+                                class="px-10 py-4 bg-white text-zinc-900 font-semibold rounded-3xl">Zur Startseite</button>
+                    </div>
+                `
+                document.body.appendChild(success)
+            }, 2200)
+        }
+        
+        function showConsultationModal() {
+            const modal = document.createElement('div')
+            modal.className = 'fixed inset-0 bg-black/90 z-[200] flex items-center justify-center p-4'
+            modal.innerHTML = `
+                <div class="bg-zinc-900 rounded-3xl max-w-lg w-full p-10 border border-zinc-700 modal">
+                    <h3 class="text-3xl font-semibold tracking-tight mb-6">Persönliches Atelier-Gespräch</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-xs text-zinc-400 mb-2">Name</label>
+                            <input type="text" value="Anna Schmidt" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl px-5 py-3">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-zinc-400 mb-2">E-Mail</label>
+                            <input type="email" value="anna@studio.at" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl px-5 py-3">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-zinc-400 mb-2">Gewünschter Termin</label>
+                            <input type="date" value="2026-02-12" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl px-5 py-3">
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex gap-x-4">
+                        <button onclick="bookConsultation(this)" 
+                                class="flex-1 py-4 bg-white text-zinc-900 font-semibold rounded-3xl">Termin buchen</button>
+                        <button onclick="this.closest('.fixed').remove()" 
+                                class="flex-1 py-4 border border-zinc-700 rounded-3xl">Abbrechen</button>
+                    </div>
+                    
+                    <div class="text-center text-xs text-zinc-500 mt-6">Das Gespräch dauert ca. 45 Minuten und ist unverbindlich.</div>
+                </div>
+            `
+            document.body.appendChild(modal)
+        }
+        
+        function bookConsultation(btn) {
+            btn.innerHTML = 'Wird gebucht...'
+            setTimeout(() => {
+                btn.closest('.fixed').remove()
+                const toast = document.createElement('div')
+                toast.className = 'fixed bottom-8 left-1/2 -translate-x-1/2 bg-emerald-600 text-white px-8 py-4 rounded-3xl flex items-center gap-x-3 shadow-xl'
+                toast.innerHTML = `<i class="fa-solid fa-check"></i> <span>Termin erfolgreich gebucht! Wir melden uns per E-Mail.</span>`
+                document.body.appendChild(toast)
+                setTimeout(() => toast.remove(), 3500)
+            }, 1400)
+        }
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+                const modals = document.querySelectorAll('.fixed.inset-0')
+                if (modals.length > 0) modals[modals.length - 1].remove()
+            }
+        })
+    </script>
+</body>
+</html>

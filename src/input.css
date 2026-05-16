@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+
+:root {
+    --primary: #FF6B00;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.font-display {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.asset-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.asset-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.preview-img {
+    transition: transform 0.4s ease;
+}
+
+.asset-card:hover .preview-img {
+    transform: scale(1.05);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+.nav-active {
+    color: #FF6B00;
+    font-weight: 600;
+}
+
+.modal {
+    animation: modalPop 0.3s ease forwards;
+}
+
+@keyframes modalPop {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.asset-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.premium-badge {
+    background: linear-gradient(90deg, #FF6B00, #FF8C42);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+/* Kaufen/Mieten spezifische Styles */
+.studio-badge {
+    background: linear-gradient(90deg, #FF6B00, #FF8C42);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.atelier-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #d1d5db;
+}
+
+.artwork-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.artwork-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+}
+
+.license-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}

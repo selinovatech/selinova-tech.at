@@ -1,0 +1,14 @@
+{
+  "name": "selinovatech",
+  "version": "1.0.0",
+  "description": "Premium Digital Assets Marketplace",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx serve .",
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1",
+    "serve": "^14.2.1"
+  }
+}

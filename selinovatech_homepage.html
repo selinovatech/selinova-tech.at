@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELINOVATECH • Premium Digital Assets</title>
+    <!-- Tailwind via Local Build (Recommended for Debugging/Production) -->
+    <link href="./dist/output.css" rel="stylesheet">
+    <!-- Tailwind via CDN (Backup) -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+    <!-- Navbar -->
+    <nav class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-lg sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-11 h-11 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center">
+                        <span class="text-white text-3xl font-black tracking-tighter">S</span>
+                    </div>
+                    <div>
+                        <div class="font-display text-3xl font-semibold tracking-tighter">SELINOVATECH</div>
+                        <div class="text-[10px] text-zinc-500 -mt-1">PREMIUM ASSETS 2026</div>
+                    </div>
+                </div>
+
+                <!-- Menu -->
+                <div class="hidden md:flex items-center gap-x-10 text-sm">
+                    <a href="#" class="hover:text-white transition-colors nav-active">Entdecken</a>
+                    <a href="#" class="hover:text-white transition-colors">Kategorien</a>
+                    <a href="#" class="hover:text-white transition-colors">Neuheiten</a>
+                    <a href="#" class="hover:text-white transition-colors">Für Teams</a>
+                </div>
+
+                <div class="flex items-center gap-x-4">
+                    <!-- Search -->
+                    <div class="relative w-72 hidden md:block">
+                        <input type="text" id="search-input" 
+                               class="w-full bg-zinc-900 border border-zinc-800 pl-10 py-2.5 rounded-2xl text-sm placeholder-zinc-500 focus:outline-none focus:border-orange-500"
+                               placeholder="Assets durchsuchen...">
+                        <i class="fa-solid fa-search absolute left-4 top-3.5 text-zinc-500"></i>
+                    </div>
+                    
+                    <button onclick="showLoginModal()"
+                            class="px-5 py-2.5 text-sm font-medium border border-zinc-700 hover:bg-zinc-900 rounded-2xl transition-colors">
+                        Anmelden
+                    </button>
+                    
+                    <button onclick="showAdminPanel()"
+                            class="px-5 py-2.5 text-sm font-semibold bg-white text-zinc-900 hover:bg-zinc-200 rounded-2xl transition-colors flex items-center gap-x-2">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <span>Admin</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="max-w-screen-2xl mx-auto px-8 pt-16 pb-20">
+        <div class="max-w-4xl">
+            <div class="inline-flex items-center gap-x-2 bg-zinc-900 border border-zinc-800 rounded-3xl px-4 py-1 mb-6">
+                <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                <span class="text-xs font-medium tracking-[1px] text-emerald-400">JETZT 20+ PREMIUM ASSETS LIVE</span>
+            </div>
+            
+            <h1 class="section-title text-7xl leading-none tracking-tighter mb-6">
+                Premium Digital Assets.<br>
+                <span class="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">Sofort einsetzbar.</span>
+            </h1>
+            
+            <p class="max-w-lg text-xl text-zinc-400 mb-10">
+                Hochwertige Templates, UI-Kits, Videos und Blueprints für moderne Webprojekte 2026.
+            </p>
+            
+            <div class="flex items-center gap-x-4">
+                <button onclick="document.getElementById('assets-section').scrollIntoView({ behavior: 'smooth' })" 
+                        class="px-10 py-4 bg-white hover:bg-zinc-100 text-zinc-900 font-semibold rounded-3xl flex items-center gap-x-3 text-lg transition-all active:scale-[0.985]">
+                    <span>Jetzt entdecken</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                
+                <button onclick="showVideoModal()" 
+                        class="px-8 py-4 border border-zinc-700 hover:bg-zinc-900 rounded-3xl flex items-center gap-x-3 text-lg transition-colors">
+                    <i class="fa-solid fa-play"></i>
+                    <span>1:42 Demo ansehen</span>
+                </button>
+            </div>
+            
+            <div class="flex items-center gap-x-8 mt-12 text-sm">
+                <div class="flex -space-x-2">
+                    <div class="w-8 h-8 bg-zinc-700 rounded-full border-2 border-zinc-950 overflow-hidden"><img src="https://i.pravatar.cc/32?img=1" class="w-full h-full object-cover"></div>
+                    <div class="w-8 h-8 bg-zinc-700 rounded-full border-2 border-zinc-950 overflow-hidden"><img src="https://i.pravatar.cc/32?img=2" class="w-full h-full object-cover"></div>
+                    <div class="w-8 h-8 bg-zinc-700 rounded-full border-2 border-zinc-950 overflow-hidden"><img src="https://i.pravatar.cc/32?img=3" class="w-full h-full object-cover"></div>
+                </div>
+                <div>
+                    <span class="font-medium">Über 4.800 Designer</span><br>
+                    <span class="text-zinc-500 text-xs">vertrauen SELINOVATECH bereits</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="border-y border-zinc-800 py-8 bg-zinc-900/50">
+        <div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-4xl font-semibold tracking-tighter">20</div>
+                <div class="text-zinc-500 text-sm mt-1">Premium Assets</div>
+            </div>
+            <div>
+                <div class="text-4xl font-semibold tracking-tighter">12</div>
+                <div class="text-zinc-500 text-sm mt-1">Kategorien</div>
+            </div>
+            <div>
+                <div class="text-4xl font-semibold tracking-tighter">100%</div>
+                <div class="text-zinc-500 text-sm mt-1">Kostenlos &amp; Premium</div>
+            </div>
+            <div>
+                <div class="text-4xl font-semibold tracking-tighter">4.8k</div>
+                <div class="text-zinc-500 text-sm mt-1">Downloads diese Woche</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assets Section -->
+    <div id="assets-section" class="max-w-screen-2xl mx-auto px-8 py-16">
+        <div class="flex items-end justify-between mb-10">
+            <div>
+                <div class="uppercase tracking-[2px] text-xs font-semibold text-orange-500">FEATURED</div>
+                <h2 class="text-5xl font-semibold tracking-tighter">Entdecke unsere Assets</h2>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-x-3 text-sm">
+                <div onclick="filterByCategory('all')" class="category-filter active px-5 py-2 rounded-3xl cursor-pointer bg-zinc-900 border border-zinc-700 text-white">Alle</div>
+                <div onclick="filterByCategory('Templates')" class="category-filter px-5 py-2 rounded-3xl cursor-pointer hover:bg-zinc-900">Templates</div>
+                <div onclick="filterByCategory('Video')" class="category-filter px-5 py-2 rounded-3xl cursor-pointer hover:bg-zinc-900">Videos</div>
+                <div onclick="filterByCategory('UI Kit')" class="category-filter px-5 py-2 rounded-3xl cursor-pointer hover:bg-zinc-900">UI Kits</div>
+            </div>
+        </div>
+
+        <!-- Asset Grid -->
+        <div id="asset-grid" class="asset-grid">
+            <!-- Populated by JavaScript -->
+        </div>
+        
+        <div class="text-center mt-12">
+            <button onclick="showAllAssets()" 
+                    class="px-8 py-3 border border-zinc-700 hover:bg-zinc-900 text-sm rounded-3xl flex items-center gap-x-2 mx-auto">
+                <span>Alle 20 Assets anzeigen</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Categories Quick Links -->
+    <div class="max-w-screen-2xl mx-auto px-8 pb-20">
+        <h3 class="text-xl font-semibold mb-6">Beliebte Kategorien</h3>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div onclick="filterByCategory('Templates')" class="group bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-3xl p-6 cursor-pointer transition-all">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <div class="font-semibold">Templates</div>
+                        <div class="text-xs text-zinc-500">HTML, Figma, Landing Pages</div>
+                    </div>
+                    <i class="fa-solid fa-palette text-3xl text-orange-500 group-hover:scale-110 transition-transform"></i>
+                </div>
+            </div>
+            <div onclick="filterByCategory('Video')" class="group bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-3xl p-6 cursor-pointer transition-all">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <div class="font-semibold">Videos &amp; Animationen</div>
+                        <div class="text-xs text-zinc-500">Promo, Reels, Backgrounds</div>
+                    </div>
+                    <i class="fa-solid fa-video text-3xl text-orange-500 group-hover:scale-110 transition-transform"></i>
+                </div>
+            </div>
+            <div onclick="filterByCategory('UI Kit')" class="group bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-3xl p-6 cursor-pointer transition-all">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <div class="font-semibold">UI Kits</div>
+                        <div class="text-xs text-zinc-500">Mobile, Admin, E-Commerce</div>
+                    </div>
+                    <i class="fa-solid fa-mobile-screen text-3xl text-orange-500 group-hover:scale-110 transition-transform"></i>
+                </div>
+            </div>
+            <div onclick="filterByCategory('Blueprint')" class="group bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-3xl p-6 cursor-pointer transition-all">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <div class="font-semibold">Blueprints</div>
+                        <div class="text-xs text-zinc-500">Architektur, UX, API</div>
+                    </div>
+                    <i class="fa-solid fa-sitemap text-3xl text-orange-500 group-hover:scale-110 transition-transform"></i>
+                </div>
+            </div>
+            <div onclick="filterByCategory('E-Commerce')" class="group bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-3xl p-6 cursor-pointer transition-all">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <div class="font-semibold">E-Commerce</div>
+                        <div class="text-xs text-zinc-500">Shops &amp; Checkout</div>
+                    </div>
+                    <i class="fa-solid fa-shopping-cart text-3xl text-orange-500 group-hover:scale-110 transition-transform"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800 bg-zinc-950">
+        <div class="max-w-screen-2xl mx-auto px-8 py-16 text-sm">
+            <div class="flex flex-col md:flex-row justify-between gap-y-12">
+                <div>
+                    <div class="flex items-center gap-x-3 mb-4">
+                        <div class="w-9 h-9 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center">
+                            <span class="text-white text-2xl font-black">S</span>
+                        </div>
+                        <span class="font-display text-2xl font-semibold tracking-tight">SELINOVATECH</span>
+                    </div>
+                    <div class="text-zinc-500 max-w-xs">
+                        Premium Digital Assets für die nächste Generation von Webprojekten.
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-3 gap-x-16 text-sm">
+                    <div>
+                        <div class="font-semibold mb-4">Plattform</div>
+                        <div class="space-y-2 text-zinc-400">
+                            <div>Entdecken</div>
+                            <div>Neuheiten</div>
+                            <div>Für Teams</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-semibold mb-4">Ressourcen</div>
+                        <div class="space-y-2 text-zinc-400">
+                            <div>Blog</div>
+                            <div>Dokumentation</div>
+                            <div>Changelog</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-semibold mb-4">Rechtliches</div>
+                        <div class="space-y-2 text-zinc-400">
+                            <div>Lizenz</div>
+                            <div>Datenschutz</div>
+                            <div>Impressum</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 pt-8 border-t border-zinc-800 text-xs text-zinc-500 flex justify-between">
+                <div>© 2026 SELINOVATECH. Alle Rechte vorbehalten.</div>
+                <div>Made with ❤️ in Wien</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Asset Modal -->
+    <div id="asset-modal" class="hidden fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4">
+        <div class="bg-zinc-900 rounded-3xl max-w-5xl w-full overflow-hidden modal border border-zinc-800">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between px-8 py-5 border-b border-zinc-800">
+                <div class="flex items-center gap-x-4">
+                    <div id="modal-badge" class="px-3 py-1 text-xs font-medium rounded-full bg-zinc-800"></div>
+                    <div id="modal-price" class="font-semibold text-xl"></div>
+                </div>
+                <button onclick="closeModal()" class="text-zinc-400 hover:text-white text-2xl">&times;</button>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 p-8">
+                <!-- Image -->
+                <div class="relative">
+                    <img id="modal-image" class="w-full rounded-2xl border border-zinc-800 shadow-2xl" alt="">
+                    <div class="absolute top-4 right-4 bg-black/70 text-white text-xs px-3 py-1 rounded-full flex items-center gap-x-1">
+                        <i class="fa-solid fa-eye"></i>
+                        <span id="modal-views">2.4k</span>
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="space-y-6">
+                    <div>
+                        <h3 id="modal-title" class="text-4xl font-semibold tracking-tight"></h3>
+                        <p id="modal-short" class="text-zinc-400 mt-2 text-lg"></p>
+                    </div>
+                    
+                    <div id="modal-description" class="text-zinc-300 leading-relaxed"></div>
+                    
+                    <div>
+                        <div class="text-xs uppercase tracking-widest text-zinc-500 mb-2">TAGS</div>
+                        <div id="modal-tags" class="flex flex-wrap gap-2"></div>
+                    </div>
+                    
+                    <div class="pt-4 border-t border-zinc-800 flex items-center gap-x-4">
+                        <button onclick="addToList()" 
+                                class="flex-1 py-4 bg-white text-zinc-900 font-semibold rounded-3xl flex items-center justify-center gap-x-3 hover:bg-zinc-100 transition-colors">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Zur Merkliste hinzufügen</span>
+                        </button>
+                        
+                        <button onclick="downloadAsset()" 
+                                class="flex-1 py-4 border border-zinc-700 hover:bg-zinc-900 rounded-3xl flex items-center justify-center gap-x-3 transition-colors">
+                            <i class="fa-solid fa-download"></i>
+                            <span>Download</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#FF6B00');
+        }
+        
+        // Asset Data (from your catalog)
+        const assets = [
+            { id: 101, title: "Modern Landing Page", slug: "modern-landing-page", preview: "Landingpage.png", short_desc: "Responsives Landing-Page-Template mit Hero & CTA", price: 0, category: "Templates", tags: ["Responsive", "Landing Page", "Premium"], views: 1240, description: "Vollständiges responsives Landing-Page-Template mit Hero-Bereich, CTA-Buttons und Kundenstimmen. Perfekt für Produktlaunches und Marketing-Seiten." },
+            { id: 102, title: "SaaS Dashboard", slug: "saas-dashboard", preview: "kalender.png", short_desc: "Modernes Dashboard mit Statistik-Karten & Darkmode", price: 9.99, category: "UI Kit", tags: ["Dashboard", "UI Kit", "Darkmode"], views: 980, description: "Professionelles SaaS-Dashboard mit interaktiven Karten, Diagrammen, Nutzerprofil und Darkmode. Ideal für Admin-Panels und Analytics-Tools." },
+            { id: 103, title: "Portfolio Showcase", slug: "portfolio-showcase", preview: "RetroCyber.png", short_desc: "Schickes Portfolio-Template für Designer", price: 0, category: "Templates", tags: ["Portfolio", "Premium"], views: 1560, description: "Elegantes Portfolio-Template mit Projektgalerie, Kontaktformular und animierten Übergängen." },
+            { id: 104, title: "Product Feature Block", slug: "product-feature-block", preview: "landingpage4.png", short_desc: "Feature-Abschnitt mit Icon-Grid", price: 6.50, category: "Templates", tags: ["Feature Block", "Blockchain"], views: 670, description: "Modularer Feature-Block mit Icon-Grid, Vorteilsliste und Launch-CTA." },
+            { id: 105, title: "Pricing Table Kit", slug: "pricing-table-kit", preview: "landingpage4.6.png", short_desc: "Responsives Pricing-Table für SaaS", price: 4.99, category: "Templates", tags: ["Pricing", "SaaS"], views: 890, description: "Vollständiges Pricing-Table-Layout mit Highlight-Spalte, monatlich/jährlich Toggle und Conversion-optimierten CTAs." },
+            { id: 201, title: "Promo Video Pack", slug: "promo-video-pack", preview: "landingpage4.3.png", short_desc: "Hochwertige Promo-Vorlagen für Social Media", price: 14.99, category: "Video", tags: ["Video", "Promo", "Sustainability"], views: 2100, description: "Sammlung hochwertiger Promo-Videos mit modernem Intro, Textanimationen und dynamischen Übergängen." },
+            { id: 202, title: "Webinar Intro", slug: "webinar-intro", preview: "landingpage4.4.png", short_desc: "Animierte Intro-Sequenz für Webinare", price: 12.00, category: "Video", tags: ["Video", "Metaverse"], views: 1340, description: "Professionelle animierte Intro-Sequenz für Online-Präsentationen und Live-Webinare." },
+            { id: 203, title: "Social Media Reel", slug: "social-media-reel", preview: "webshop50.2.png", short_desc: "Kurzvideo-Vorlage für Reels & TikTok", price: 8.50, category: "Video", tags: ["Video", "Fast Food", "Anime"], views: 1780, description: "Vertikales Short-Form-Video-Template mit Text-Overlays und Sound-Placeholdern." },
+            { id: 204, title: "Animated Backgrounds", slug: "animated-backgrounds", preview: "300web-bilder-werbung.png", short_desc: "Loopfähige animierte Hintergründe", price: 0, category: "Video", tags: ["Video", "Animation"], views: 920, description: "Hochwertige loopfähige animierte Hintergründe für Banner, Slides und Werbespots." },
+            { id: 205, title: "Demo Screen Recordings", slug: "demo-screen-recordings", preview: "^kalender.png", short_desc: "Professionelle Screencasts für Demos", price: 11.00, category: "Video", tags: ["Video", "Demo"], views: 760, description: "Professionelle Bildschirmaufnahmen mit Voiceover-Placeholder und Cursor-Animationen." },
+            { id: 301, title: "App Architecture Blueprint", slug: "app-architecture-blueprint", preview: "webshop50.3.png", short_desc: "Strukturierte App-Architektur", price: 7.50, category: "Blueprint", tags: ["Blueprint", "Architecture"], views: 540, description: "Vollständige App-Architektur-Blueprint mit Komponentenfluss und Deployment-Map." },
+            { id: 302, title: "UX Flowchart Kit", slug: "ux-flowchart-kit", preview: "Webshop Pro + Livechat Ai.png", short_desc: "Visuelle UX-Workflows", price: 5.99, category: "Blueprint", tags: ["Blueprint", "UX"], views: 610, description: "Professionelle UX-Flowcharts mit User Journey Map und Conversion-Pfaden." },
+            { id: 303, title: "SaaS System Map", slug: "saas-system-map", preview: "webshop50.png", short_desc: "Blueprint für SaaS-Systeme", price: 0, category: "Blueprint", tags: ["Blueprint", "SaaS"], views: 480, description: "Umfassende SaaS-System-Map mit Service-Übersicht und API-Schnittstellen." },
+            { id: 304, title: "Data Pipeline Blueprint", slug: "data-pipeline-blueprint", preview: "webshop50.5.png", short_desc: "Datenfluss-Blueprint für ETL", price: 9.00, category: "Blueprint", tags: ["Blueprint", "Data"], views: 390, description: "Vollständiger Daten-Pipeline-Blueprint mit Quellen-Mapping und Batch/Echtzeit-Verarbeitung." },
+            { id: 305, title: "API Design Blueprint", slug: "api-design-blueprint", preview: "Fast Food Webshopapp.png", short_desc: "REST-API-Blueprint", price: 6.99, category: "Blueprint", tags: ["Blueprint", "API"], views: 520, description: "Professioneller API-Blueprint mit REST-Endpoints, Authentifizierung und Fehlercodes." },
+            { id: 401, title: "Mobile UI Kit", slug: "mobile-ui-kit", preview: "webshop50.1.png", short_desc: "UI-Komponenten für mobile Apps", price: 13.50, category: "UI Kit", tags: ["UI Kit", "Mobile", "Figma"], views: 1120, description: "Komplettes Mobile-UI-Kit mit Buttons, Formularen, Karten und responsivem Layout." },
+            { id: 402, title: "Admin Panel Kit", slug: "admin-panel-kit", preview: "Webshop Pro + Livechat Ai2.png", short_desc: "Vollständiges Admin-Dashboard", price: 14.00, category: "UI Kit", tags: ["UI Kit", "Admin", "Dashboard"], views: 870, description: "Professionelles Admin-Panel mit Tabellen, Widgets, Navigation und KPIs." },
+            { id: 403, title: "Ecommerce UI Kit", slug: "ecommerce-ui-kit", preview: "webshop50.4.png", short_desc: "Vollständiges E-Commerce UI-Set", price: 15.99, category: "UI Kit", tags: ["UI Kit", "E-Commerce", "Anime"], views: 1450, description: "Komplettes E-Commerce-UI-Kit mit Produktkarten, Warenkorb, Checkout und Kundenbewertungen." },
+            { id: 404, title: "Form Component Set", slug: "form-component-set", preview: "webshop50.6.png", short_desc: "Responsives Formular-Set", price: 0, category: "UI Kit", tags: ["UI Kit", "Forms"], views: 640, description: "Umfangreiche Sammlung responsiver Formularelemente mit Validierungs-States." },
+            { id: 405, title: "Dashboard Widget Kit", slug: "dashboard-widget-kit", preview: "landingpage4.5.png", short_desc: "KPI-Widgets & Diagramm-Module", price: 8.50, category: "UI Kit", tags: ["UI Kit", "Dashboard", "Widgets"], views: 730, description: "Modulare Widget-Sammlung für KPI-Übersichten, Analysen und Team-Reports." }
+        ]
+        
+        let currentFilter = 'all'
+        let currentSearch = ''
+        
+        // Render asset grid
+        function renderAssets(filteredAssets) {
+            const grid = document.getElementById('asset-grid')
+            grid.innerHTML = ''
+            
+            filteredAssets.forEach(asset => {
+                const card = document.createElement('div')
+                card.className = `asset-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden cursor-pointer group`
+                card.innerHTML = `
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="previews/${asset.preview}" 
+                             class="preview-img w-full h-full object-cover"
+                             onerror="this.src='https://picsum.photos/id/${asset.id % 100}/600/400'">
+                        
+                        <div class="absolute top-4 right-4 flex gap-x-2">
+                            ${asset.price === 0 ? 
+                                `<div class="bg-emerald-500 text-white text-[10px] px-3 py-1 rounded-full font-medium">KOSTENLOS</div>` : 
+                                `<div class="bg-white text-zinc-900 text-xs px-3 py-1 rounded-full font-semibold">€${asset.price}</div>`
+                            }
+                        </div>
+                        
+                        <div class="absolute bottom-4 left-4">
+                            <div class="px-3 py-1 text-xs bg-black/70 text-white rounded-full flex items-center gap-x-1">
+                                <i class="fa-solid fa-eye text-[10px]"></i>
+                                <span class="text-xs">${asset.views.toLocaleString()}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-5">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <div class="font-semibold text-lg leading-tight tracking-tight">${asset.title}</div>
+                                <div class="text-zinc-400 text-sm mt-1 line-clamp-2">${asset.short_desc}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-1 mt-4">
+                            ${asset.tags.slice(0, 2).map(tag => 
+                                `<span class="px-3 py-px text-[10px] bg-zinc-800 text-zinc-400 rounded-full">${tag}</span>`
+                            ).join('')}
+                        </div>
+                        
+                        <div class="mt-5 pt-4 border-t border-zinc-800 flex justify-between items-center text-xs">
+                            <div class="text-emerald-400 flex items-center gap-x-1">
+                                <i class="fa-solid fa-check"></i>
+                                <span class="font-medium">Sofort verfügbar</span>
+                            </div>
+                            <button onclick="event.stopImmediatePropagation(); addToListFromCard(${asset.id})" 
+                                    class="text-orange-500 hover:text-orange-400 transition-colors">
+                                <i class="fa-solid fa-plus mr-1"></i> Merkliste
+                            </button>
+                        </div>
+                    </div>
+                `
+                
+                card.onclick = () => showAssetModal(asset)
+                grid.appendChild(card)
+            })
+        }
+        
+        // Filter assets
+        function filterAssets() {
+            let filtered = assets
+            
+            // Category filter
+            if (currentFilter !== 'all') {
+                filtered = filtered.filter(a => 
+                    a.category.toLowerCase().includes(currentFilter.toLowerCase()) || 
+                    a.tags.some(t => t.toLowerCase().includes(currentFilter.toLowerCase()))
+                )
+            }
+            
+            // Search filter
+            if (currentSearch.length > 1) {
+                const term = currentSearch.toLowerCase()
+                filtered = filtered.filter(a => 
+                    a.title.toLowerCase().includes(term) || 
+                    a.short_desc.toLowerCase().includes(term) ||
+                    a.tags.some(t => t.toLowerCase().includes(term))
+                )
+            }
+            
+            renderAssets(filtered)
+        }
+        
+        function filterByCategory(category) {
+            // Update active state
+            document.querySelectorAll('.category-filter').forEach(el => {
+                el.classList.remove('active', 'bg-zinc-900', 'border-zinc-700')
+                el.classList.add('hover:bg-zinc-900')
+                if (el.textContent.includes(category) || (category === 'all' && el.textContent === 'Alle')) {
+                    el.classList.add('active', 'bg-zinc-900', 'border-zinc-700')
+                    el.classList.remove('hover:bg-zinc-900')
+                }
+            })
+            
+            currentFilter = category
+            filterAssets()
+        }
+        
+        // Search
+        function setupSearch() {
+            const searchInput = document.getElementById('search-input')
+            searchInput.addEventListener('input', (e) => {
+                currentSearch = e.target.value
+                filterAssets()
+            })
+            
+            // Category filter buttons
+            document.querySelectorAll('.category-filter').forEach(el => {
+                el.addEventListener('click', () => {
+                    if (el.textContent === 'Alle') {
+                        currentFilter = 'all'
+                    } else {
+                        currentFilter = el.textContent.trim()
+                    }
+                    filterAssets()
+                })
+            })
+        }
+        
+        // Show asset modal
+        let currentAsset = null
+        
+        function showAssetModal(asset) {
+            currentAsset = asset
+            
+            document.getElementById('modal-image').src = `previews/${asset.preview}`
+            document.getElementById('modal-image').onerror = function() {
+                this.src = `https://picsum.photos/id/${asset.id % 100}/900/600`
+            }
+            
+            document.getElementById('modal-title').textContent = asset.title
+            document.getElementById('modal-short').textContent = asset.short_desc
+            document.getElementById('modal-description').textContent = asset.description
+            document.getElementById('modal-views').textContent = asset.views.toLocaleString()
+            
+            // Price badge
+            const priceEl = document.getElementById('modal-price')
+            if (asset.price === 0) {
+                priceEl.innerHTML = `<span class="text-emerald-400 font-bold">KOSTENLOS</span>`
+            } else {
+                priceEl.innerHTML = `<span class="font-bold">€${asset.price}</span>`
+            }
+            
+            // Badge
+            const badgeEl = document.getElementById('modal-badge')
+            badgeEl.innerHTML = asset.category
+            badgeEl.className = `px-3 py-1 text-xs font-medium rounded-full ${asset.category === 'Video' ? 'bg-violet-500/20 text-violet-400' : 'bg-orange-500/20 text-orange-400'}`
+            
+            // Tags
+            const tagsContainer = document.getElementById('modal-tags')
+            tagsContainer.innerHTML = asset.tags.map(tag => 
+                `<span class="px-4 py-1 text-xs bg-zinc-800 text-zinc-300 rounded-full">${tag}</span>`
+            ).join('')
+            
+            document.getElementById('asset-modal').classList.remove('hidden')
+            document.getElementById('asset-modal').classList.add('flex')
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('asset-modal')
+            modal.classList.add('hidden')
+            modal.classList.remove('flex')
+        }
+        
+        // Add to list
+        function addToList() {
+            if (!currentAsset) return
+            
+            let list = JSON.parse(localStorage.getItem('merklister') || '[]')
+            
+            if (!list.find(item => item.id === currentAsset.id)) {
+                list.push(currentAsset)
+                localStorage.setItem('merklister', JSON.stringify(list))
+                
+                const btns = document.querySelectorAll('#asset-modal button')
+                btns[0].innerHTML = `<i class="fa-solid fa-check mr-2"></i> Hinzugefügt!`
+                btns[0].classList.add('!bg-emerald-500', '!text-white')
+                
+                setTimeout(() => {
+                    closeModal()
+                    showToast(`${currentAsset.title} wurde zur Merkliste hinzugefügt!`)
+                }, 800)
+            } else {
+                showToast('Dieses Asset ist bereits in deiner Merkliste!')
+            }
+        }
+        
+        function addToListFromCard(assetId) {
+            const asset = assets.find(a => a.id === assetId)
+            if (!asset) return
+            
+            let list = JSON.parse(localStorage.getItem('merklister') || '[]')
+            
+            if (!list.find(item => item.id === asset.id)) {
+                list.push(asset)
+                localStorage.setItem('merklister', JSON.stringify(list))
+                showToast(`${asset.title} zur Merkliste hinzugefügt!`)
+            } else {
+                showToast('Bereits in der Merkliste!')
+            }
+            
+            event.stopImmediatePropagation()
+        }
+        
+        function downloadAsset() {
+            if (!currentAsset) return
+            showToast(`Download von "${currentAsset.title}" gestartet...`)
+            
+            setTimeout(() => {
+                const link = document.createElement('a')
+                link.href = `previews/${currentAsset.preview}`
+                link.download = currentAsset.slug + '.png'
+                document.body.appendChild(link)
+                link.click()
+                document.body.removeChild(link)
+                closeModal()
+            }, 1200)
+        }
+        
+        // Toast notification
+        function showToast(message) {
+            const toast = document.createElement('div')
+            toast.className = `fixed bottom-6 left-1/2 -translate-x-1/2 bg-zinc-800 border border-zinc-700 text-white px-8 py-4 rounded-3xl shadow-2xl flex items-center gap-x-3 z-[200]`
+            toast.innerHTML = `
+                <i class="fa-solid fa-check-circle text-emerald-400"></i>
+                <span>${message}</span>
+            `
+            document.body.appendChild(toast)
+            
+            setTimeout(() => {
+                toast.style.transition = 'all 0.3s ease'
+                toast.style.opacity = '0'
+                toast.style.transform = 'translate(-50%, 20px)'
+                setTimeout(() => toast.remove(), 300)
+            }, 2400)
+        }
+        
+        // Login modal (fake)
+        function showLoginModal() {
+            const modal = document.createElement('div')
+            modal.className = 'fixed inset-0 bg-black/80 z-[200] flex items-center justify-center'
+            modal.innerHTML = `
+                <div class="bg-zinc-900 rounded-3xl p-8 w-full max-w-md modal border border-zinc-800">
+                    <h3 class="text-2xl font-semibold mb-6">Anmelden</h3>
+                    
+                    <div class="space-y-5">
+                        <div>
+                            <label class="text-xs text-zinc-400">E-Mail</label>
+                            <input type="email" value="max@mustermann.at" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl px-4 py-3 mt-1">
+                        </div>
+                        <div>
+                            <label class="text-xs text-zinc-400">Passwort</label>
+                            <input type="password" value="demo2026" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl px-4 py-3 mt-1">
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex gap-x-4">
+                        <button onclick="this.closest('.fixed').remove(); showToast('Erfolgreich angemeldet!')" 
+                                class="flex-1 py-4 bg-white text-zinc-900 font-semibold rounded-3xl">Anmelden</button>
+                        <button onclick="this.closest('.fixed').remove()" 
+                                class="flex-1 py-4 border border-zinc-700 rounded-3xl">Abbrechen</button>
+                    </div>
+                    
+                    <div class="text-center mt-6 text-xs text-zinc-500">
+                        Demo-Account: max@mustermann.at / demo2026
+                    </div>
+                </div>
+            `
+            document.body.appendChild(modal)
+        }
+        
+        function showAdminPanel() {
+            const modal = document.createElement('div')
+            modal.className = 'fixed inset-0 bg-black/80 z-[200] flex items-center justify-center'
+            modal.innerHTML = `
+                <div class="bg-zinc-900 rounded-3xl p-8 w-full max-w-lg modal border border-zinc-800">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-semibold">Admin Dashboard</h3>
+                        <span class="text-xs bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full">Online</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-4 mb-8">
+                        <div class="bg-zinc-800 rounded-2xl p-5 text-center">
+                            <div class="text-4xl font-semibold">20</div>
+                            <div class="text-xs text-zinc-400">Assets</div>
+                        </div>
+                        <div class="bg-zinc-800 rounded-2xl p-5 text-center">
+                            <div class="text-4xl font-semibold">4.8k</div>
+                            <div class="text-xs text-zinc-400">Views heute</div>
+                        </div>
+                        <div class="bg-zinc-800 rounded-2xl p-5 text-center">
+                            <div class="text-4xl font-semibold">142</div>
+                            <div class="text-xs text-zinc-400">Neue Nutzer</div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-xs text-zinc-400 mb-2">Schnellaktionen</div>
+                    <div class="flex flex-wrap gap-3">
+                        <button class="px-5 py-2 text-xs bg-zinc-800 hover:bg-zinc-700 rounded-2xl">Neues Asset hochladen</button>
+                        <button class="px-5 py-2 text-xs bg-zinc-800 hover:bg-zinc-700 rounded-2xl">Kategorien verwalten</button>
+                        <button class="px-5 py-2 text-xs bg-zinc-800 hover:bg-zinc-700 rounded-2xl">Analytics</button>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <button onclick="this.closest('.fixed').remove()" 
+                                class="text-xs text-zinc-400 hover:text-white">Dashboard schließen</button>
+                    </div>
+                </div>
+            `
+            document.body.appendChild(modal)
+        }
+        
+        function showVideoModal() {
+            const modal = document.createElement('div')
+            modal.className = 'fixed inset-0 bg-black/90 z-[200] flex items-center justify-center'
+            modal.innerHTML = `
+                <div class="max-w-4xl w-full mx-4 modal">
+                    <div class="flex justify-between mb-3 px-1">
+                        <div class="font-semibold">SELINOVATECH • Platform Demo 2026</div>
+                        <button onclick="this.closest('.fixed').remove()" class="text-white text-3xl">&times;</button>
+                    </div>
+                    
+                    <div class="aspect-video bg-zinc-900 rounded-3xl overflow-hidden relative border border-zinc-700">
+                        <div class="absolute inset-0 flex items-center justify-center bg-[radial-gradient(#27272a_1px,transparent_1px)] bg-[length:4px_4px]">
+                            <div class="text-center">
+                                <div class="mx-auto w-20 h-20 bg-white/10 backdrop-blur-xl rounded-full flex items-center justify-center mb-6 border border-white/30">
+                                    <i class="fa-solid fa-play text-5xl text-white ml-1"></i>
+                                </div>
+                                <div class="text-white text-xl">Demo Video</div>
+                                <div class="text-zinc-400 text-sm mt-1">1:42 • 4K</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-xs text-center text-zinc-400">Dies ist ein Demo-Placeholder. In der echten Version würde hier ein Video-Player stehen.</div>
+                </div>
+            `
+            document.body.appendChild(modal)
+        }
+        
+        function showAllAssets() {
+            currentFilter = 'all'
+            currentSearch = ''
+            document.getElementById('search-input').value = ''
+            document.querySelectorAll('.category-filter').forEach(el => el.classList.remove('active', 'bg-zinc-900'))
+            renderAssets(assets)
+            
+            document.getElementById('assets-section').scrollIntoView({ behavior: 'smooth' })
+        }
+        
+        // Initialize everything
+        function init() {
+            initializeTailwind()
+            
+            // Render initial assets (first 12)
+            renderAssets(assets.slice(0, 12))
+            
+            setupSearch()
+            
+            // Keyboard shortcut
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "/" && document.activeElement.tagName === "BODY") {
+                    e.preventDefault()
+                    document.getElementById('search-input').focus()
+                }
+                
+                if (e.key === "Escape") {
+                    const modal = document.getElementById('asset-modal')
+                    if (!modal.classList.contains('hidden')) {
+                        modal.classList.add('hidden')
+                        modal.classList.remove('flex')
+                    } else {
+                        const openModals = document.querySelectorAll('.fixed.inset-0')
+                        if (openModals.length > 0) openModals[openModals.length-1].remove()
+                    }
+                }
+            })
+            
+            // Welcome toast
+            setTimeout(() => {
+                // Uncomment if you want a welcome message
+                // showToast("Willkommen bei SELINOVATECH!")
+            }, 1800)
+            
+            // Make sure previews folder note
+            console.log('%c[SELINOVATECH] Homepage ready. Place your preview images in /previews/ folder.', 'color:#666')
+        }
+        
+        // Boot
+        window.onload = init
+    </script>
+</body>
+</html>
